@@ -32,7 +32,8 @@ Chapter generation is a heavy process. The system utilizes FastAPI's `Background
 ```text
 .
 ├── main.py              # FastAPI routes and Gating Logic
-├── services.py          # AI Logic, Context Chaining & SMTP Services
+├── services.py          # AI Logic, Context Chaining & PDF to email
 ├── database.py          # Supabase client configuration
-├── requirements.txt     # Project dependencies
+├── models.py            # schemas 
+├── notifications.py     # Notifications to email using SMTP
 └── .env                 # Environment variables (API Keys, SMTP)

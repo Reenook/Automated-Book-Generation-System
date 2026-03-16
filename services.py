@@ -26,15 +26,12 @@ def generate_outline(title: str, notes: str) -> str:
 def run_full_generation(project_id: str):
     """
     This function manages the sequential generation.
-    It satisfies the 'Context Chaining' requirement.
     """
     # 1. Fetch the outline from the project
     proj = supabase.table("projects").select("outline", "title").eq("id", project_id).single().execute()
     outline = proj.data['outline']
 
-    # 2. Extract Chapter Titles (Simplified for Trial)
-    # In a real app, you'd use LLM to parse the outline,
-    # but for the demo, we'll generate 3 standard chapters.
+    # 2. Extract Chapter Titles (Simplified).
     chapter_titles = ["Introduction and Background", "The Core Conflict", "Resolution and Summary"]
 
     for i, title in enumerate(chapter_titles):
